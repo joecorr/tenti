@@ -54,8 +54,8 @@ ROOT_URLCONF = 'project_dashboard.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
-        'APP_DIRS': True,
+        'DIRS': [],  # This can remain empty for now
+        'APP_DIRS': True,  # This tells Django to look for templates in each app's `templates` folder
         'OPTIONS': {
             'context_processors': [
                 'django.template.context_processors.debug',
@@ -66,6 +66,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'project_dashboard.wsgi.application'
 
