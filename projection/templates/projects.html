@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>Projects</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <style>
         body {
@@ -12,25 +12,7 @@
             margin: 0;
             padding: 20px;
         }
-        .dashboard-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-        .dashboard-header h1 {
-            font-size: 24px;
-            margin: 0;
-        }
-        .total-projects {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .projects-grid {
-            margin-top: 20px;
+        .projects-list {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 20px;
@@ -59,13 +41,10 @@
 
 </head>
 <body>
-    <div class="dashboard-header">
-        <h1>Project Dashboard</h1>
-        <div class="total-projects">Total Projects: {{ total_projects }}</div>
-    </div>
+    <h1>All Projects</h1>
 
-    <div class="projects-grid">
-        {% for project in recent_projects %}
+    <div class="projects-list">
+        {% for project in projects %}
         <div class="project-card">
             <h3>{{ project.name }}</h3>
             <p>Status: {{ project.status }}</p>

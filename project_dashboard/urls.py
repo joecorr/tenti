@@ -6,5 +6,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),  # Route to home view
     path('dashboard/', views.dashboard, name='dashboard'),  # Route to the dashboard
+    path('projects/', views.projects_list, name='projects'),  # New projects page
 
 ]
