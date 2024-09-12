@@ -1,8 +1,10 @@
 from django.contrib import admin
 from django.urls import path
-from projects import views  # Assuming your app is named `projects`
+from projection import views  # Make sure this is correct
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('dashboard/', views.dashboard, name='dashboard'),  # Add this line for the dashboard
+    path('', views.home, name='home'),  # Route to home view
+    path('dashboard/', views.dashboard, name='dashboard'),  # Route to the dashboard
+
 ]
