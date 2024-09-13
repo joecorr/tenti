@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My App{% endblock %}</title>
+    {% load static %}
+    <link rel="icon" href="{% if ENVIRONMENT == 'development' %}{% static 'favicons/favicon-blue.ico' %}{% else %}{% static 'favicons/favicon-red.ico' %}{% endif %}">
+</head>
+<body>
+    {% block content %}{% endblock %}
+</body>
+</html>

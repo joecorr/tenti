@@ -76,14 +76,26 @@ WSGI_APPLICATION = 'project_dashboard.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/5.1/ref/settings/#databases
+import dj_database_url
+import os
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',  # Specify PostgreSQL engine
+        'NAME': 'd94div1v20utbo',  # Database name from DATABASE_URL
+        'USER': 'u8qa2faugql993',  # User from DATABASE_URL
+        'PASSWORD': 'p575ce2464e5f20cebd43351b6a6c9173561987924bf9668f52d92f4d42d5db75',  # Password from DATABASE_URL
+        'HOST': 'cb5ajfjosdpmil.cluster-czrs8kj4isg7.us-east-1.rds.amazonaws.com',  # Host from DATABASE_URL
+        'PORT': '5432',  # Default PostgreSQL port
     }
 }
+
+# Parse the database configuration from the DATABASE_URL environment variable
+DATABASE_URL = os.environ.get('DATABASE_URL')
+if DATABASE_URL:
+    DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
+
+
 
 
 # Password validation
